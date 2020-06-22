@@ -1,0 +1,39 @@
+{% set name = "htdp" %}
+{% set version = "1.0" %}
+{% set sha256 = "672c0516f76b6b803acd66ab8e060caaf4da7147160125174e1ad0b7faf6709a" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: HTDP-download.zip
+  url: http://www.ngs.noaa.gov/TOOLS/Htdp/HTDP-download.zip
+  sha256: {{ sha256 }}
+
+build:
+  number: 1
+  skip: True  # [win]
+
+requirements:
+  build:
+# For OSX use the local compiler. See build.sh more more detail.  
+    - {{ compiler('gfortran') }} # [linux]
+  host:
+    - libgfortran 3.*
+  run:
+    - libgfortran 3.*
+test:
+  commands:
+
+about:
+  home: https://geodesy.noaa.gov/TOOLS/Htdp/HTDP-user-guide.pdf
+  license: APACHE
+  summary: 'Horizontal Time-Dependent Positioning'
+  doc_url:
+  dev_url:
+
+extra:
+  recipe-maintainers:
+    - oleg-alexandrov
+
