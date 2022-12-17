@@ -1,6 +1,6 @@
 {% set name = "htdp" %}
-{% set version = "1.0" %}
-{% set sha256 = "672c0516f76b6b803acd66ab8e060caaf4da7147160125174e1ad0b7faf6709a" %}
+{% set version = "1.0_isis7" %}
+{% set sha256 = "7b15900a896460c523cd844e57f8e5ebc277222835b4b6535e28283f5b953d5b" %}
 
 package:
   name: {{ name|lower }}
@@ -17,12 +17,11 @@ build:
 
 requirements:
   build:
-# For OSX use the local compiler. See build.sh more more detail.  
-    - {{ compiler('gfortran') }} # [linux]
+    - {{ compiler('gfortran') }}
   host:
-    - libgfortran 3.*
+
   run:
-    - libgfortran 3.*
+
 test:
   commands:
 
