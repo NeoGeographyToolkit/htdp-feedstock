@@ -1,5 +1,5 @@
 {% set name = "htdp" %}
-{% set version = "1.0_isis7" %}
+{% set version = "1.0_asp3.5.0" %}
 {% set sha256 = "7b15900a896460c523cd844e57f8e5ebc277222835b4b6535e28283f5b953d5b" %}
 
 package:
